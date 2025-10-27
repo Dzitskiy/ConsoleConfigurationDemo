@@ -1,8 +1,8 @@
-﻿using ConfigurationClassLibrary;
-using ConsoleConfigurationDemo;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ConfigurationClassLibrary;
+using ConsoleConfigurationDemo.Services;
 
 // Создание и конфигурация хоста
 using IHost host = Host.CreateDefaultBuilder(args)
@@ -13,18 +13,16 @@ using IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((context, services) =>
     {
-        // Регистрируем наш сервис для DI
+        // Регистрируем наши сервисы для DI
         services.AddSingleton<ConfigService>();
         services.AddSingleton<AnotherConfigService>();
 
     })
     .Build();
 
-// Получаем сервис из контейнера зависимостей
+// Получаем сервисы из контейнера зависимостей
 var configService = host.Services.GetRequiredService<ConfigService>();
 configService.DisplayConfiguration();
-
-// Получаем сервис из контейнера зависимостей
 var anotherConfigService = host.Services.GetRequiredService<AnotherConfigService>();
 anotherConfigService.DisplayConfiguration();
 

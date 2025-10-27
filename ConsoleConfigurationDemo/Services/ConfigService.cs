@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleConfigurationDemo
+namespace ConsoleConfigurationDemo.Services
 {
     public class ConfigService
     {
