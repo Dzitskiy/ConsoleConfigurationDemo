@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ConfigurationClassLibrary/ConfigurationClassLibrary.csproj" />
+  <Project Path="ConsoleConfigurationDemo/ConsoleConfigurationDemo.csproj" />
+</Solution>
